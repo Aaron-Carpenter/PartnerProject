@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>URL List Creator</title>
+    <style>
+        form {
+            text-align: left;
+        }
+
+        label {
+            display: inline-block;
+            width: 150px;
+            text-align: center;
+            margin-right: 10px;
+        }
+
+        .border {
+            border: 2px solid #000;
+            padding-left: 10px;
+            padding-right: 10px;
+            padding-bottom: 10px;
+            
+            max-width: 400px;
+        }
+    </style>
+</head>
+<body>
+    <div class="border">
+    <h1>Add URL</h1>
+        <form id="addURLForm" action="AddURLServlet" method="post">
+            <label for="name">Name for URL:</label>
+            <input type="text" id="name" name="name" placeholder="Enter name..." required><br><br>
+
+            <label for="url">URL:</label>
+            <input type="text" id="url" name="url" placeholder="Enter URL..." required><br><br>
+
+            <label for="description">Short Description:</label>
+            <input type="text" id="description" name="description" placeholder="Enter description..." required><br><br>
+            
+            <label for="threat_assessment">Threat Assessment:</label>
+            <input type="text" id="threat_assessment" name="threat_assessment" placeholder="Enter threat assessment..." required><br><br>
+            
+            <label for="severity">Severity Rating:</label>
+		    <select id="severity" name="severity">
+		        <option value="1">Severity 1</option>
+		        <option value="2">Severity 2</option>
+		        <option value="3">Severity 3</option>
+		        <option value="4">Severity 4</option>
+		        <option value="5">Severity 5</option>
+		    </select>
+
+            <input type="submit" value="Add URL">
+        </form>
+    </div>
+</body>
+</html>
+
+

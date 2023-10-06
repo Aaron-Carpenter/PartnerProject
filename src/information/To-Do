@@ -1,0 +1,13 @@
+To Do List:
+(*) = Optional but cool
+	HTML:
+		1.) ( ) Edit URL section on index page
+		2.) ( ) Delete URL via ID section on index page
+		3.) ( ) Page sorter, hides unused sections of page for focus with selection boxes (Hides the bordered Add URL, or Delete URL, or Edit URL sections, based on selection
+	Java:
+		1.) ( ) Create all servlets for editing, adding, and deleting from SQL DB via ListItemHelper.
+		2.) ( ) Create TableAssessment entity to store threat assessment details like "Severity Rating" and "Threat Assessment"
+		3.) ( )
+		
+	Notes:
+		1.) Make sure that "threat" details are being pushed to new table creation and not to "links" DB/Table
