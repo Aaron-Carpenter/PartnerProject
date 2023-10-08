@@ -71,4 +71,9 @@ public class TableLinks {
     public void setDescription(String description) {
         this.description = description;
     }
+    
+    @Override
+    public String toString() {
+        return "Assessment [id=" + id + ", link=" + link + ", time=" + time + ", description=" + description + "]";
+    }
 }
