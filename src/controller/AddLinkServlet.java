@@ -26,12 +26,14 @@ public class AddLinkServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String name = request.getParameter("name");
-        String url = request.getParameter("url");
+        String url = request.getParameter("URL");
         String description = request.getParameter("description");
-        String threatAssessment = request.getParameter("threat_assessment");
+        String threatAssessment = request.getParameter("threatAssessment");
         String severity = request.getParameter("severity");
+        
+        String timeAdded = "NULL"; // EDIT THIS TO BE THE TIME ADDED
 
-        TableLinks link = new TableLinks(name, url, description);
+        TableLinks link = new TableLinks(name, url, description, timeAdded);
         TableAssessments assessment = new TableAssessments(threatAssessment, severity);
 
         LinkHelper linkHelper = new LinkHelper();

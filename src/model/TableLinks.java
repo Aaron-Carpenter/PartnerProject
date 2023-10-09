@@ -20,6 +20,9 @@ public class TableLinks {
     @Column(name = "ID")
     private int id;
 
+    @Column(name = "LINK_NAME")
+    private String linkName;
+    
     @Column(name = "LINK")
     private String link;
 
@@ -33,8 +36,9 @@ public class TableLinks {
         super();
     }
     
-    public TableLinks(String link, String time, String description) {
+    public TableLinks(String linkName, String link, String description, String time) {
         super();
+        this.linkName = linkName;
         this.link = link;
         this.time = time;
         this.description = description;
@@ -48,6 +52,14 @@ public class TableLinks {
         this.id = id;
     }
 
+    public String getLinkName() {
+        return linkName;
+    }
+
+    public void setLinkName(String linkName) {
+        this.linkName = linkName;
+    }
+    
     public String getLink() {
         return link;
     }

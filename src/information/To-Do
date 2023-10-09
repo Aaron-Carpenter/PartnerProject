@@ -11,7 +11,7 @@ To Do List:
 		
 	Notes:
 		1.) Make sure that "threat" details are being pushed to new table creation and not to "links" DB/Table
-		
+		2.) When creating methods to delete from the SQL database when we want to delete ID 1 for table "links" we need to delete ID 2 from "assessments"
 		
 	
 	

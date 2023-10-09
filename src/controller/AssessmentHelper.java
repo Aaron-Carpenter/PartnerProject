@@ -48,12 +48,19 @@ public class AssessmentHelper {
         em.getTransaction().commit();
         em.close();
     }
+    
+    public static TableAssessments getAssessmentById(int id) {
+        EntityManager em = emfactory.createEntityManager();
+        return em.find(TableAssessments.class, id);
+    }
 
-    public void updateAssessmentInformation(TableAssessments toEdit) {
+	public static void updateAssessmentInformation(TableAssessments existingAssessment) {
         EntityManager em = emfactory.createEntityManager();
         em.getTransaction().begin();
-        em.merge(toEdit);
+        em.merge(existingAssessment);
         em.getTransaction().commit();
         em.close();
-    }
+	}
+    
+    
 }

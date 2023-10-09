@@ -8,12 +8,16 @@
 package controller;
 
 import javax.persistence.EntityManager;
+
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
 import java.util.List;
 
+import model.LinkAndAssess;
+import model.TableAssessments;
 import model.TableLinks;
+
 
 public class LinkHelper {
 
@@ -57,4 +61,13 @@ public class LinkHelper {
         em.getTransaction().commit();
         em.close();
     }
+
+    public TableLinks getLinkById(int id) {
+        EntityManager em = emfactory.createEntityManager();
+        return em.find(TableLinks.class, id);
+    }
+
+
+
+    
 }
