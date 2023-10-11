@@ -56,7 +56,7 @@ public class EditLinkServlet extends HttpServlet {
 
         AssessmentHelper assessmentHelper = new AssessmentHelper();
         int assessmentId = selectedId + 1;
-        TableAssessments existingAssessment = assessmentHelper.getAssessmentById(assessmentId);
+        TableAssessments existingAssessment = AssessmentHelper.getAssessmentById(assessmentId);
 
         if (existingAssessment != null) {
             String newThreatAssessment = request.getParameter("newThreatAssessment");
@@ -70,8 +70,11 @@ public class EditLinkServlet extends HttpServlet {
                 existingAssessment.setSeverity(newSeverity);
             }
 
-            assessmentHelper.updateAssessmentInformation(existingAssessment);
+            AssessmentHelper.updateAssessmentInformation(existingAssessment);
         }
+        
+        LinkAndAssessHelper linkAndAssessHelper = new LinkAndAssessHelper();
+        linkAndAssessHelper.fetchAndInsertData();
 
         response.sendRedirect("index.html");
     }

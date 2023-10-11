@@ -1,6 +1,8 @@
 package controller;
 
 import java.io.IOException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -30,8 +32,11 @@ public class AddLinkServlet extends HttpServlet {
         String description = request.getParameter("description");
         String threatAssessment = request.getParameter("threatAssessment");
         String severity = request.getParameter("severity");
+
+        LocalDateTime currentTime = LocalDateTime.now();
         
-        String timeAdded = "NULL"; // EDIT THIS TO BE THE TIME ADDED
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        String timeAdded = currentTime.format(formatter);
 
         TableLinks link = new TableLinks(name, url, description, timeAdded);
         TableAssessments assessment = new TableAssessments(threatAssessment, severity);
@@ -41,6 +46,9 @@ public class AddLinkServlet extends HttpServlet {
 
         AssessmentHelper assessmentHelper = new AssessmentHelper();
         assessmentHelper.insertAssessmentInformation(assessment);
+        
+        LinkAndAssessHelper linkAndAssessHelper = new LinkAndAssessHelper();
+        linkAndAssessHelper.fetchAndInsertData();
 
         response.sendRedirect("index.html");
     }

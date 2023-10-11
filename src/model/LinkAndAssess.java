@@ -1,10 +1,3 @@
-
-/**
- * @author Aaron Carpenter - acarpenter5@dmacc.edu
- * CIS175 - Fall 2023
- * Oct 9, 2023
- */
-
 package model;
 
 import javax.persistence.*;
@@ -17,38 +10,34 @@ public class LinkAndAssess {
     @Column(name = "id")
     private int id;
 
-    @ManyToOne
-    @JoinColumn(name = "link_id", referencedColumnName = "id")
-    private TableLinks link;
-
-    @ManyToOne
-    @JoinColumn(name = "assessment_id", referencedColumnName = "id")
-    private TableAssessments assessment;
-
-    // Include all variables from TableLinks and TableAssessments
     @Column(name = "link_name")
     private String linkName;
+
+    @Column(name = "link")
+    private String link;
 
     @Column(name = "time")
     private String time;
 
     @Column(name = "description")
     private String description;
+    
+    @Column(name = "assessment")
+    private String assessment;
 
     @Column(name = "severity")
     private String severity;
 
     public LinkAndAssess() {
-        super();
     }
 
-    public LinkAndAssess(TableLinks link, TableAssessments assessment) {
+    public LinkAndAssess(String linkName, String link, String description, String time, String assessment, String severity) {
+        this.linkName = linkName;
         this.link = link;
+        this.description = description;
+        this.time = time;
         this.assessment = assessment;
-        this.linkName = link.getLink();
-        this.time = link.getTime();
-        this.description = link.getDescription();
-        this.severity = assessment.getSeverity();
+        this.severity = severity;
     }
 
     public int getId() {
@@ -59,28 +48,20 @@ public class LinkAndAssess {
         this.id = id;
     }
 
-    public TableLinks getLink() {
-        return link;
-    }
-
-    public void setLink(TableLinks link) {
-        this.link = link;
-    }
-
-    public TableAssessments getAssessment() {
-        return assessment;
-    }
-
-    public void setAssessment(TableAssessments assessment) {
-        this.assessment = assessment;
-    }
-
     public String getLinkName() {
         return linkName;
     }
 
     public void setLinkName(String linkName) {
         this.linkName = linkName;
+    }
+
+    public String getLink() {
+        return link;
+    }
+
+    public void setLink(String link) {
+        this.link = link;
     }
 
     public String getTime() {
@@ -98,13 +79,31 @@ public class LinkAndAssess {
     public void setDescription(String description) {
         this.description = description;
     }
-
+    
+    public String getAssessment() {
+        return assessment;
+    }
+    
+    public void setAssessment(String assessment) {
+        this.assessment = assessment;
+    }
+    
     public String getSeverity() {
         return severity;
     }
 
     public void setSeverity(String severity) {
         this.severity = severity;
+    }
+    
+    public String toString() {
+        return "LinkAndAssess [id=" + id +
+               ", linkName=" + linkName +
+               ", link=" + link +
+               ", time=" + time +
+               ", description=" + description +
+               ", assessment=" + assessment +
+               ", severity=" + severity + "]";
     }
 }
 

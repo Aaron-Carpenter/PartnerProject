@@ -7,18 +7,17 @@
         body {
             background-color: grey;
         }
-        
+
         form input[type="text"],
-	    form select {
-	        background-color: light_grey;
-	    }
-	    
-	    input[type="submit"],
-	    button {
-	        background-color: light_grey; /* Light grey background color */
-	    }
-    
-    
+        form select {
+            background-color: light_grey;
+        }
+
+        input[type="submit"],
+        button {
+            background-color: light_grey; /* Light grey background color */
+        }
+
         :root {
             --box-spacing: 20px;
         }
@@ -31,7 +30,7 @@
         }
 
         .border {
-            border: 3px solid #000;
+            border: 3px solid black;
             padding-left: 10px;
             padding-right: 10px;
             padding-bottom: 10px;
@@ -50,6 +49,18 @@
             text-align: center;
             margin-right: 10px;
         }
+
+        /* Styles for the bottom two boxes */
+        .flex-container.bottom {
+            margin-top: 15px;
+            margin-bottom: 10px;
+        }
+
+        .border.bottom {
+            border: 3px solid black;
+            padding: 15px;
+            width: 400px;
+        }
     </style>
 </head>
 <body>
@@ -66,10 +77,10 @@
 
                 <label for="description">Short Description:</label>
                 <input type="text" id="description" name="description" placeholder="Enter description..." required><br><br>
-                
+
                 <label for="threat_assessment">Threat Assessment:</label>
                 <input type="text" id="threatAssessment" name="threatAssessment" placeholder="Enter threat assessment..." required><br><br>
-                
+
                 <label for="severity">Severity Rating:</label>
                 <select id="severity" name="severity">
                     <option value="1">Severity 1</option>
@@ -87,22 +98,21 @@
         <div class="border">
             <h2>Edit URL/Assessment</h2>
             <form id="editLinkForm" action="EditLinkServlet" method="post">
-            
                 <label for="id">URL ID:</label>
                 <input type="text" id="id" name="id" placeholder="Enter URL ID..."><br><br>
-            
+
                 <label for="newName">Name for URL:</label>
                 <input type="text" id="newName" name="newName" placeholder="Enter new name..."><br><br>
 
-                <label for="newURL">URL:</label>
+                <label for "newURL">URL:</label>
                 <input type="text" id="newURL" name="newURL" placeholder="Enter new URL..."><br><br>
 
                 <label for="newDescription">Short Description:</label>
                 <input type="text" id="newDescription" name="newDescription" placeholder="Enter new description..."><br><br>
-                
+
                 <label for="newThreatAssessment">Threat Assessment:</label>
-                <input type="text" id="newThreatAssessment" name="newThreatAssessment" placeholder="Enter new threat assessment..."><br><br>
-                
+                <input type="text" id="newThreatAssessment" name="newThreatAssessment" placeholder="Enter new threat assess..."><br><br>
+
                 <label for="newSeverity">Severity Rating:</label>
                 <select id="newSeverity" name="newSeverity">
                     <option value="1">Severity 1</option>
@@ -114,6 +124,22 @@
 
                 <input type="submit" value="Edit URL">
             </form>
+        </div>
+    </div>
+
+    <div class="flex-container bottom">
+        <div class="border bottom">
+            <h2>Delete URL</h2>
+            <form action="DeleteLinkServlet" method="post">
+                <label for="deleteId">URL ID to Delete:</label>
+                <input type="text" id="deleteId" name="deleteId" placeholder="Enter URL ID..." required><br><br>
+
+                <input type="submit" value="Delete Link">
+            </form>
+        </div>
+        <div class="border bottom">
+            <h2>View All Links</h2>
+                <p><a href="ViewAllLinkAndAssessServlet">Click here to view all added links...</a></p>
         </div>
     </div>
 </body>
