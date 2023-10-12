@@ -1,10 +1,9 @@
-
 /**
  * @author Aaron Carpenter - acarpenter5@dmacc.edu
+ * @author Noah Arterburn - narterburn@dmacc.edu
  * CIS175 - Fall 2023
- * Oct 11, 2023
+ * Sep 9, 2023
  */
-
 package controller;
 
 import java.util.List;

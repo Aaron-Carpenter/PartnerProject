@@ -1,9 +1,10 @@
-
 /**
  * @author Aaron Carpenter - acarpenter5@dmacc.edu
+ * @author Noah Arterburn - narterburn@dmacc.edu
  * CIS175 - Fall 2023
- * Oct 7, 2023
+ * Sep 9, 2023
  */
+
 package controller;
 
 import javax.persistence.EntityManager;
@@ -18,7 +19,7 @@ public class AssessmentHelper {
 
     private static EntityManagerFactory emfactory = Persistence.createEntityManagerFactory("PartnerProject");
 
-    public void insertAssessmentInformation(TableAssessments assessment) { // Updated method name and parameter type
+    public void insertAssessmentInformation(TableAssessments assessment) {
         EntityManager em = emfactory.createEntityManager();
         em.getTransaction().begin();
         em.persist(assessment);

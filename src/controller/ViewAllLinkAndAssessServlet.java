@@ -1,3 +1,10 @@
+/**
+ * @author Aaron Carpenter - acarpenter5@dmacc.edu
+ * @author Noah Arterburn - narterburn@dmacc.edu
+ * CIS175 - Fall 2023
+ * Sep 9, 2023
+ */
+
 package controller;
 
 import java.io.IOException;
@@ -18,8 +25,6 @@ public class ViewAllLinkAndAssessServlet extends HttpServlet {
     private static EntityManagerFactory emfactory = Persistence.createEntityManagerFactory("PartnerProject");
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-
         EntityManager em = emfactory.createEntityManager();
 
         List<LinkAndAssess> allLinkAndAssess = em.createQuery("SELECT la FROM LinkAndAssess la", LinkAndAssess.class).getResultList();

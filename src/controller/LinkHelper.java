@@ -1,10 +1,9 @@
 /**
  * @author Aaron Carpenter - acarpenter5@dmacc.edu
- * @author Noah Arterburn - NArterburn@dmacc.edu
+ * @author Noah Arterburn - narterburn@dmacc.edu
  * CIS175 - Fall 2023
  * Sep 9, 2023
  */
-
 package controller;
 
 import javax.persistence.EntityManager;

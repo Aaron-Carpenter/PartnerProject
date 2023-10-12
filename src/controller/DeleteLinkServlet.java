@@ -1,3 +1,10 @@
+/**
+ * @author Aaron Carpenter - acarpenter5@dmacc.edu
+ * @author Noah Arterburn - narterburn@dmacc.edu
+ * CIS175 - Fall 2023
+ * Sep 9, 2023
+ */
+
 package controller;
 
 import java.io.IOException;
@@ -37,7 +44,6 @@ public class DeleteLinkServlet extends HttpServlet {
             if (linkToDelete != null) {
                 linkAndAssessHelper.deleteLinkAndAssess(linkToDelete);
 
-                // Delete from the links table
                 LinkHelper linkHelper = new LinkHelper();
                 TableLinks link = linkHelper.getLinkById(deleteId);
 
@@ -45,7 +51,6 @@ public class DeleteLinkServlet extends HttpServlet {
                     linkHelper.deleteLinkInformation(link);
                 }
 
-                // Delete from the assessments table
                 AssessmentHelper assessmentHelper = new AssessmentHelper();
                 TableAssessments assessment = assessmentHelper.getAssessmentById(deleteId);
 
